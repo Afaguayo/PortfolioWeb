@@ -9,14 +9,9 @@ frontend:
       commands:
         - npm run build
   artifacts:
-    baseDirectory: my-portfolio/.next
+    baseDirectory: my-portfolio/out   # ✅ this must be 'out' for static export
     files:
       - '**/*'
   cache:
     paths:
       - my-portfolio/node_modules/**/*
-  customHeaders:
-    - pattern: '**/*'
-      headers:
-        - key: 'Cache-Control'
-          value: 'no-cache'
