@@ -7,8 +7,7 @@ frontend:
         - npm install
     build:
       commands:
-        - cd my-portfolio
-        - npm run build
+        - npm run build    # ✅ DO NOT cd again here!
   artifacts:
     baseDirectory: my-portfolio/.next
     files:
