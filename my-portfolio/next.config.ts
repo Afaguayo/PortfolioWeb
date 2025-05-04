@@ -1,8 +1,9 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
+  output: "export", // ✅ enables static export for Amplify
   eslint: {
-    ignoreDuringBuilds: true, // ✅ disables blocking on unused imports
+    ignoreDuringBuilds: true,
   },
 };
 
