@@ -1,48 +1,21 @@
 "use client";
 
-import {
-  motion,
-  useScroll,
-  useAnimation,
-  useInView,
-} from "framer-motion";
-import { useRef, useEffect } from "react";
+import { motion } from "framer-motion";
 
 export default function Home() {
-  const containerRef = useRef<HTMLDivElement | null>(null);
-  const sectionRef = useRef(null);
-  const controls = useAnimation();
-
-  const inView = useInView(sectionRef, {
-    root: containerRef.current ?? undefined, // ✅ Fixes TypeScript error
-    threshold: 0.3,
-    once: false,
-  });
-
-  useEffect(() => {
-    if (inView) {
-      controls.start("animate");
-    } else {
-      controls.start("initial");
-    }
-  }, [inView, controls]);
-
   const fadeInUp = {
     initial: { opacity: 0, y: 40 },
     animate: { opacity: 1, y: 0, transition: { duration: 0.6 } },
   };
 
   return (
-    <div
-      ref={containerRef}
-      className="relative overflow-y-scroll h-screen scroll-smooth snap-y snap-mandatory bg-black text-white pt-16"
-    >
+    <div className="relative overflow-y-scroll h-screen scroll-smooth snap-y snap-mandatory bg-black text-white pt-16">
       <section className="snap-start h-screen flex items-center justify-center">
         <motion.div
-          ref={sectionRef}
           variants={fadeInUp}
           initial="initial"
-          animate={controls}
+          whileInView="animate"
+          viewport={{ once: false, amount: 0.3 }} // ✅ Replaces threshold
           className="text-center"
         >
           <h1 className="text-6xl font-bold">Welcome to My Portfolio</h1>
