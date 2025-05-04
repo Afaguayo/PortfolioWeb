@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap');
+
 @import "tailwindcss";
 @import "tw-animate-css";
 
@@ -121,18 +123,53 @@
   }
 }
 
-/* globals.css */
-::-webkit-scrollbar {
-  width: 0px;
-  background: transparent; /* Optional: hide background */
-}
-body {
-  scrollbar-width: none; /* Firefox */
-  -ms-overflow-style: none; /* IE/Edge */
-}
-
-/* Hide scrollbar */
+/* Hide scrollbars */
 ::-webkit-scrollbar {
   width: 0px;
   background: transparent;
+}
+body {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+/* Orbitron font utility */
+.font-orbitron {
+  font-family: 'Orbitron', sans-serif;
+}
+
+/* Glitch effect */
+.glitch {
+  position: relative;
+}
+.glitch::before,
+.glitch::after {
+  content: attr(class);
+  position: absolute;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  color: white;
+  clip: rect(0, 900px, 0, 0);
+}
+.glitch::before {
+  animation: glitchTop 2s infinite linear alternate-reverse;
+  color: #ff00c8;
+}
+.glitch::after {
+  animation: glitchBottom 2s infinite linear alternate-reverse;
+  color: #00ffe1;
+}
+
+@keyframes glitchTop {
+  0% { clip: rect(0, 9999px, 0, 0); }
+  10% { clip: rect(0, 9999px, 60px, 0); transform: translate(-2px, -2px); }
+  20% { clip: rect(0, 9999px, 20px, 0); transform: translate(2px, 2px); }
+  100% { clip: rect(0, 9999px, 0, 0); }
+}
+@keyframes glitchBottom {
+  0% { clip: rect(0, 9999px, 0, 0); }
+  10% { clip: rect(60px, 9999px, 100px, 0); transform: translate(2px, -1px); }
+  20% { clip: rect(20px, 9999px, 80px, 0); transform: translate(-2px, 1px); }
+  100% { clip: rect(0, 9999px, 0, 0); }
 }
