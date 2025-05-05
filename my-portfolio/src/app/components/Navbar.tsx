@@ -21,21 +21,22 @@ export default function Navbar() {
 
     const observer = new IntersectionObserver(
       (entries) => {
-        entries.forEach((entry) => {
+        for (const entry of entries) {
           if (entry.isIntersecting) {
             setActive(entry.target.id);
+            break;
           }
-        });
+        }
       },
       {
         root: container,
-        threshold: 0.5, // Trigger when 50% of section is in view
+        threshold: 0.6,
       }
     );
 
     const targets = sections
       .map((s) => document.getElementById(s.id))
-      .filter((el): el is Element => el !== null);
+      .filter((el): el is HTMLElement => el !== null);
 
     targets.forEach((el) => observer.observe(el));
 
@@ -46,25 +47,27 @@ export default function Navbar() {
 
   const scrollToSection = (id: string) => {
     const el = document.getElementById(id);
-    el?.scrollIntoView({ behavior: "smooth" });
+    if (el) {
+      el.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
   };
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-black/30 backdrop-blur-md px-6 py-4 flex justify-center gap-6 text-sm font-medium text-white shadow-md">
+    <nav className="fixed top-0 left-0 right-0 z-50 bg-black/30 backdrop-blur-lg px-6 py-4 flex justify-center gap-6 text-sm font-medium text-white shadow-lg border-b border-white/10">
       {sections.map((section) => (
         <button
           key={section.id}
           onClick={() => scrollToSection(section.id)}
-          className={`relative transition-colors duration-300 ${
+          className={`relative transition-all duration-300 px-2 py-1 ${
             active === section.id ? "text-sky-400 font-semibold" : "text-white"
           }`}
         >
           {section.label}
           <span
-            className={`absolute left-0 -bottom-1 h-[2px] bg-sky-400 w-full transform transition-transform duration-300 ${
+            className={`absolute bottom-0 left-0 w-full h-[2px] bg-sky-400 transform transition-transform duration-300 ${
               active === section.id ? "scale-x-100" : "scale-x-0"
             } origin-left`}
-          ></span>
+          />
         </button>
       ))}
     </nav>

@@ -6,9 +6,9 @@ import {
   AnimatePresence,
   useAnimation,
   useInView,
+  useTransform,
 } from "framer-motion";
 import { useRef, useEffect, useState, ReactNode } from "react";
-import { Parallax, ParallaxLayer } from "@react-spring/parallax";
 
 const fadeUp = {
   hidden: { opacity: 0, y: 40 },
@@ -113,7 +113,7 @@ function Section({
       initial="hidden"
       animate={controls}
       variants={sectionVariants}
-      className={`snap-start min-h-screen bg-black/80 backdrop-blur px-6 py-28 flex flex-col justify-center ${className}`}
+      className={`snap-start min-h-screen px-6 py-28 flex flex-col justify-center ${className}`}
     >
       {children}
     </motion.section>
@@ -123,6 +123,8 @@ function Section({
 export default function HomePage() {
   const containerRef = useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useScroll({ container: containerRef });
+  const y1 = useTransform(scrollYProgress, [0, 1], ["0%", "20%"]);
+  const y2 = useTransform(scrollYProgress, [0, 1], ["0%", "-10%"]);
   const [showBtn, setShowBtn] = useState(false);
 
   useEffect(() => {
@@ -138,38 +140,34 @@ export default function HomePage() {
 
   return (
     <>
-
+      {/* Parallax background layers */}
+      <motion.div
+        className="fixed inset-0 bg-gradient-to-b from-black via-slate-900 to-black z-[-2]"
+        style={{ y: y1 }}
+      />
+      <motion.div
+        className="fixed inset-0 bg-gradient-to-t from-white/5 via-transparent to-white/5 backdrop-blur-xl z-[-1]"
+        style={{ y: y2 }}
+      />
 
       <div
         ref={containerRef}
         id="scroll-container"
-        className="relative overflow-y-scroll h-screen scroll-smooth snap-y snap-mandatory bg-gradient-to-b from-black via-slate-900 to-black text-white pt-16"
+        className="relative overflow-y-scroll h-screen scroll-smooth snap-y snap-mandatory text-white pt-16"
       >
         {/* Hero */}
-        <Section id="home">
-          <motion.h1
-            variants={fadeUp}
-            custom={0}
-            className="text-6xl font-bold text-center"
-          >
+        <Section id="home" className="bg-black/70 backdrop-blur-md">
+          <motion.h1 variants={fadeUp} custom={0} className="text-6xl font-bold text-center">
             Angel Aguayo
           </motion.h1>
-          <motion.p
-            variants={fadeUp}
-            custom={1}
-            className="text-xl text-center mt-4 text-gray-300"
-          >
+          <motion.p variants={fadeUp} custom={1} className="text-xl text-center mt-4 text-gray-300">
             Building sleek and interactive web experiences.
           </motion.p>
         </Section>
 
         {/* About */}
         <Section id="about">
-          <motion.h2
-            variants={fadeUp}
-            custom={0}
-            className="text-4xl font-bold text-center mb-12"
-          >
+          <motion.h2 variants={fadeUp} custom={0} className="text-4xl font-bold text-center mb-12">
             🧠 My Journey
           </motion.h2>
           <div className="max-w-3xl mx-auto space-y-10">
@@ -180,9 +178,7 @@ export default function HomePage() {
                 custom={i + 1}
                 className="border-l-4 border-sky-500 pl-6 relative"
               >
-                <div className="absolute -left-6 top-1/2 -translate-y-1/2 text-xl">
-                  {j.emoji}
-                </div>
+                <div className="absolute -left-6 top-1/2 -translate-y-1/2 text-xl">{j.emoji}</div>
                 <h3 className="text-sky-400 font-semibold">{j.year}</h3>
                 <p className="text-gray-300">{j.text}</p>
               </motion.div>
@@ -192,11 +188,7 @@ export default function HomePage() {
 
         {/* Skills */}
         <Section id="skills">
-          <motion.h2
-            variants={fadeUp}
-            custom={0}
-            className="text-4xl font-bold text-center mb-10"
-          >
+          <motion.h2 variants={fadeUp} custom={0} className="text-4xl font-bold text-center mb-10">
             ⚙️ Skills & Stack
           </motion.h2>
           <div className="flex flex-wrap justify-center gap-4">
@@ -205,7 +197,7 @@ export default function HomePage() {
                 key={i}
                 variants={fadeUp}
                 custom={i + 1}
-                className="bg-slate-800/70 backdrop-blur text-white px-4 py-2 rounded-full text-sm hover:bg-sky-600 transition shadow-md"
+                className="bg-white/10 backdrop-blur px-4 py-2 rounded-full text-sm hover:bg-sky-600 transition shadow"
               >
                 {skill}
               </motion.div>
@@ -215,11 +207,7 @@ export default function HomePage() {
 
         {/* Projects */}
         <Section id="projects">
-          <motion.h2
-            variants={fadeUp}
-            custom={0}
-            className="text-4xl font-bold text-center mb-10"
-          >
+          <motion.h2 variants={fadeUp} custom={0} className="text-4xl font-bold text-center mb-10">
             🧱 Projects
           </motion.h2>
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -228,7 +216,7 @@ export default function HomePage() {
                 key={i}
                 variants={fadeUp}
                 custom={i}
-                className="bg-white/10 backdrop-blur border border-white/10 rounded-xl p-5 transition hover:scale-[1.02] hover:shadow-xl"
+                className="bg-white/10 backdrop-blur border border-white/10 rounded-xl p-5 hover:scale-[1.02] hover:shadow-2xl transition"
               >
                 <h3 className="text-xl font-semibold text-sky-400">{proj.title}</h3>
                 <p className="text-gray-300 mt-2 mb-3">{proj.desc}</p>
@@ -252,11 +240,11 @@ export default function HomePage() {
           <div className="max-w-2xl mx-auto space-y-6">
             <motion.div variants={fadeUp} custom={1}>
               <h3 className="text-sky-400 text-lg font-semibold">FutureTech - Software Intern</h3>
-              <p className="text-gray-300">Worked with React and Firebase to build interfaces and admin tools.</p>
+              <p className="text-gray-300">Built tools using React and Firebase.</p>
             </motion.div>
             <motion.div variants={fadeUp} custom={2}>
               <h3 className="text-sky-400 text-lg font-semibold">Freelance Developer</h3>
-              <p className="text-gray-300">Created custom websites for small businesses and individuals.</p>
+              <p className="text-gray-300">Delivered custom websites and portfolios.</p>
             </motion.div>
           </div>
         </Section>
@@ -279,7 +267,7 @@ export default function HomePage() {
           </motion.div>
         </Section>
 
-        {/* Resume Download */}
+        {/* Resume */}
         <Section id="resume">
           <motion.div variants={fadeUp} custom={0} className="text-center">
             <a
@@ -292,7 +280,7 @@ export default function HomePage() {
           </motion.div>
         </Section>
 
-        {/* Scroll to Top Button */}
+        {/* Scroll to Top */}
         <AnimatePresence>
           {showBtn && (
             <motion.button
@@ -303,7 +291,7 @@ export default function HomePage() {
               transition={{ duration: 0.3 }}
               className="fixed bottom-8 right-8 bg-sky-600 p-3 rounded-full shadow-xl text-white z-[70]"
             >
-              Scroll back to the top
+              ⬆️
             </motion.button>
           )}
         </AnimatePresence>
