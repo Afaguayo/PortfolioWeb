@@ -86,12 +86,12 @@ const translations = {
       },
     ] as const,
     journey: [
-      { year: "2020", text: "Started coding.", emoji: "💻" },
-      { year: "2021", text: "Got into UTEP and learned Java.", emoji: "🎓" },
-      { year: "2022", text: "Learned Python and C, Databases, and OS.", emoji: "🐍" },
-      { year: "2023", text: "Joined AI4ALL; learned ML & AI development.", emoji: "🤖" },
-      { year: "2024", text: "Studied neural networks and modern AI.", emoji: "🧠" },
-      { year: "2025", text: "Diving into cybersecurity.", emoji: "🛡️" },
+      { year: "2020", text: "Started coding.",  },
+      { year: "2021", text: "Got into UTEP and learned Java.",  },
+      { year: "2022", text: "Learned Python and C, Databases, and OS.",  },
+      { year: "2023", text: "Joined AI4ALL; learned ML & AI development.",  },
+      { year: "2024", text: "Studied neural networks and modern AI.",  },
+      { year: "2025", text: "Diving into cybersecurity.",  },
     ] as const,
   },
   es: {
@@ -155,14 +155,14 @@ const translations = {
       },
     ] as const,
     journey: [
-      { year: "2020", text: "Empecé a programar.", emoji: "💻" },
-      { year: "2021", text: "Ingresé a UTEP y aprendí Java.", emoji: "🎓" },
-      { year: "2022", text: "Aprendí Python y C, bases de datos y SO.", emoji: "🐍" },
+      { year: "2020", text: "Empecé a programar.", },
+      { year: "2021", text: "Ingresé a UTEP y aprendí Java.",},
+      { year: "2022", text: "Aprendí Python y C, bases de datos y SO.", },
       { year: "2023", text: 
-        "Me uní a AI4ALL; aprendí desarrollo de ML e IA.", emoji: "🤖" },
+        "Me uní a AI4ALL; aprendí desarrollo de ML e IA.",},
       { year: "2024", text: 
-        "Estudié redes neuronales y IA moderna.", emoji: "🧠" },
-      { year: "2025", text: "Sumergiéndome en ciberseguridad.", emoji: "🛡️" },
+        "Estudié redes neuronales y IA moderna.",  },
+      { year: "2025", text: "Sumergiéndome en ciberseguridad.",  },
     ] as const,
   },
 };
