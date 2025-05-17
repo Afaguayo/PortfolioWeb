@@ -6,7 +6,6 @@ import { Toaster } from "@/components/ui/sonner";
 
 export const metadata: Metadata = {
   title: "Angel Aguayo | Portfolio",
-  description: "Futuristic web developer portfolio",
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
