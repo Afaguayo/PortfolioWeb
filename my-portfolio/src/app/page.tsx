@@ -24,7 +24,7 @@ const sectionVariants = {
   show: { transition: { staggerChildren: 0.8 } },
 };
 
-// all your copy lives here
+
 const translations = {
   en: {
     heroTitle: "Angel Aguayo",
@@ -304,7 +304,7 @@ export default function HomePage() {
                 className="border-l-4 border-sky-500 pl-6 relative"
               >
                 <div className="absolute -left-6 top-1/2 -translate-y-1/2 text-xl">
-                  {j.emoji}
+                  
                 </div>
                 <h3 className="text-sky-400 font-semibold">{j.year}</h3>
                 <p className="text-gray-300">{j.text}</p>
