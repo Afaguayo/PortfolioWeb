@@ -3,7 +3,7 @@ import type { Metadata, Viewport } from "next";
 import { Press_Start_2P, Shippori_Mincho_B1, VT323 } from "next/font/google";
 import "./globals.css";
 
-// 8-bit labels, DOS terminal body, and an Evangelion-style heavy serif (Latin + kanji) for title cards.
+// 8-bit labels, DOS terminal body, and an Evangelion-style heavy serif for title cards.
 const pixel = Press_Start_2P({ subsets: ["latin"], weight: "400", variable: "--font-pixel" });
 const vt323 = VT323({ subsets: ["latin"], weight: "400", variable: "--font-term" });
 const mincho = Shippori_Mincho_B1({ subsets: ["latin"], weight: "800", variable: "--font-eva", preload: false });

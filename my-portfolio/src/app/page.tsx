@@ -11,7 +11,7 @@ import { CONTACT, skills, t, type Lang } from "@/lib/content";
 const SECTIONS = ["home", "stats", "music", "projects", "log", "contact"] as const;
 const LANG_KEY = "lang";
 
-type Card = { ep: string; card: string; kanji: string };
+type Card = { ep: string; card: string };
 
 // Evangelion-style title card on top, DOS path underneath.
 function Window({ id, title, card, children }: { id: string; title: string; card: Card; children: ReactNode }) {
@@ -20,7 +20,6 @@ function Window({ id, title, card, children }: { id: string; title: string; card
       <header className="window-bar">
         <span className="ep">{card.ep}</span>
         <h2 className="card-title">{card.card}</h2>
-        <span className="kanji" aria-hidden>{card.kanji}</span>
       </header>
       <p className="window-path">
         C:\ANGEL\{title}&gt;<span className="cursor">_</span>
@@ -118,7 +117,6 @@ export default function HomePage() {
 
       <main className="shell">
         <section id="home" className="hero">
-          <span className="hero-kanji" aria-hidden>天使</span>
           <span className="sparkle s1" aria-hidden>✦</span>
           <span className="sparkle s2" aria-hidden>✧</span>
           <span className="sparkle s3" aria-hidden>✦</span>
