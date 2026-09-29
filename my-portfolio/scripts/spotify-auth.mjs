@@ -1,7 +1,8 @@
 // One-time setup: log in to Spotify and store the credentials as GitHub Actions secrets.
 // Usage (from my-portfolio/):
 //   SPOTIFY_CLIENT_ID=... SPOTIFY_CLIENT_SECRET=... node scripts/spotify-auth.mjs
-// The Spotify app must list http://127.0.0.1:8888/callback as a Redirect URI.
+// The Spotify app must list the Redirect URI below (default http://127.0.0.1:8888/callback);
+// set SPOTIFY_REDIRECT_URI to use a different loopback address the app already lists.
 import { createServer } from "node:http";
 import { spawnSync } from "node:child_process";
 
@@ -11,7 +12,8 @@ if (!id || !secret) {
   process.exit(1);
 }
 
-const REDIRECT = "http://127.0.0.1:8888/callback";
+const REDIRECT = process.env.SPOTIFY_REDIRECT_URI || "http://127.0.0.1:8888/callback";
+const { hostname: HOST, port: PORT, pathname: CALLBACK } = new URL(REDIRECT);
 const REPO = "Afaguayo/PortfolioWeb";
 const authUrl =
   "https://accounts.spotify.com/authorize?" +
@@ -26,7 +28,7 @@ function setSecret(name, value) {
 
 const server = createServer(async (req, res) => {
   const url = new URL(req.url, REDIRECT);
-  if (url.pathname !== "/callback") return res.writeHead(404).end();
+  if (url.pathname !== CALLBACK) return res.writeHead(404).end();
   const code = url.searchParams.get("code");
   if (!code) {
     res.end("Spotify did not return a code: " + (url.searchParams.get("error") ?? "unknown"));
@@ -56,7 +58,7 @@ const server = createServer(async (req, res) => {
   server.close();
 });
 
-server.listen(8888, "127.0.0.1", () => {
+server.listen(Number(PORT) || 80, HOST === "localhost" ? "127.0.0.1" : HOST, () => {
   console.log("Opening Spotify login...\nIf nothing opens, visit:\n" + authUrl);
   spawnSync(process.platform === "darwin" ? "open" : "xdg-open", [authUrl]);
 });

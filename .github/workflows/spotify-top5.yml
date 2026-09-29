@@ -7,6 +7,11 @@ on:
   schedule:
     - cron: "17 */6 * * *"
   workflow_dispatch:
+  # Also refresh whenever the fetch script or this workflow changes.
+  push:
+    paths:
+      - my-portfolio/scripts/spotify-top5.mjs
+      - .github/workflows/spotify-top5.yml
 
 permissions:
   contents: write
