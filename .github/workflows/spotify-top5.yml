@@ -1,0 +1,44 @@
+name: Spotify top 5
+
+# Refreshes the "NOW_SPINNING.TOP5" list on the site. The JSON goes to the
+# `spotify-data` branch (not main), so updates don't trigger an Amplify rebuild;
+# the site reads it from raw.githubusercontent.com.
+on:
+  schedule:
+    - cron: "17 */6 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Fetch top tracks
+        env:
+          SPOTIFY_CLIENT_ID: ${{ secrets.SPOTIFY_CLIENT_ID }}
+          SPOTIFY_CLIENT_SECRET: ${{ secrets.SPOTIFY_CLIENT_SECRET }}
+          SPOTIFY_REFRESH_TOKEN: ${{ secrets.SPOTIFY_REFRESH_TOKEN }}
+        run: |
+          mkdir -p "$RUNNER_TEMP/data"
+          node my-portfolio/scripts/spotify-top5.mjs "$RUNNER_TEMP/data/spotify.json"
+
+      # The data branch only ever holds the latest spotify.json, so it is rewritten each run.
+      - name: Publish to spotify-data branch
+        working-directory: ${{ runner.temp }}/data
+        env:
+          TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          git init -q -b spotify-data
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add spotify.json
+          git commit -q -m "Update Spotify top 5"
+          git push -q -f "https://x-access-token:${TOKEN}@github.com/${GITHUB_REPOSITORY}.git" spotify-data
