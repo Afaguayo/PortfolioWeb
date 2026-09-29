@@ -12,7 +12,7 @@ export const CONTACT = {
   phoneHref: "tel:+526141542124",
   email: "angelaguayo78@outlook.com",
   github: "https://github.com/Afaguayo",
-  resume: "/Angel%20Aguayo%20Resume.pdf",
+  resume: `${process.env.NEXT_PUBLIC_BASE_PATH || ""}/Angel%20Aguayo%20Resume.pdf`,
 };
 
 export const skills = [
