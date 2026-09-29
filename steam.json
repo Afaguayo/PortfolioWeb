@@ -1,0 +1,18 @@
+{
+  "updated": "2026-09-29T04:08:17.562Z",
+  "window": "2weeks",
+  "games": [
+    {
+      "name": "Deadlock",
+      "hours": 8.7,
+      "image": "https://cdn.cloudflare.steamstatic.com/steam/apps/1422450/capsule_184x69.jpg",
+      "url": "https://store.steampowered.com/app/1422450/"
+    },
+    {
+      "name": "Arma Reforger",
+      "hours": 0.6,
+      "image": "https://cdn.cloudflare.steamstatic.com/steam/apps/1874880/capsule_184x69.jpg",
+      "url": "https://store.steampowered.com/app/1874880/"
+    }
+  ]
+}
