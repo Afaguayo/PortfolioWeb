@@ -3,6 +3,7 @@
 import { useEffect, useState, type ReactNode } from "react";
 import BootScreen from "./components/BootScreen";
 import GithubProjects from "./components/GithubProjects";
+import PixelAngel from "./components/PixelAngel";
 import SpotifyTop5 from "./components/SpotifyTop5";
 import { ageOn, daysToNextBirthday } from "@/lib/age";
 import { CONTACT, skills, t, type Lang } from "@/lib/content";
@@ -10,17 +11,20 @@ import { CONTACT, skills, t, type Lang } from "@/lib/content";
 const SECTIONS = ["home", "stats", "music", "projects", "log", "contact"] as const;
 const LANG_KEY = "lang";
 
-function Window({ id, title, children }: { id: string; title: string; children: ReactNode }) {
+type Card = { ep: string; card: string; kanji: string };
+
+// Evangelion-style title card on top, DOS path underneath.
+function Window({ id, title, card, children }: { id: string; title: string; card: Card; children: ReactNode }) {
   return (
     <section id={id} className="window">
       <header className="window-bar">
-        <span className="window-dots" aria-hidden>
-          <i /><i /><i />
-        </span>
-        <h2 className="window-title">
-          C:\ANGEL\{title}&gt;<span className="cursor">_</span>
-        </h2>
+        <span className="ep">{card.ep}</span>
+        <h2 className="card-title">{card.card}</h2>
+        <span className="kanji" aria-hidden>{card.kanji}</span>
       </header>
+      <p className="window-path">
+        C:\ANGEL\{title}&gt;<span className="cursor">_</span>
+      </p>
       <div className="window-body">{children}</div>
     </section>
   );
@@ -81,9 +85,10 @@ export default function HomePage() {
       <BootScreen lines={c.boot} skipLabel={c.skip} />
       <div className="crt" aria-hidden />
 
+      <header className="sticky-head">
       <nav className="topbar">
         <a href="#home" className="brand">
-          <span className="brand-x" aria-hidden>X</span> ANGEL.OS
+          <span className="brand-halo" aria-hidden /> ANGEL.OS
         </a>
         <ul className="blades">
           {SECTIONS.map((id, i) => (
@@ -103,12 +108,21 @@ export default function HomePage() {
           ))}
         </div>
       </nav>
+      <div className="alert-strip" aria-hidden>
+        <div className="alert-track">
+          <span>{c.alert} {c.alert} </span>
+          <span>{c.alert} {c.alert} </span>
+        </div>
+      </div>
+      </header>
 
       <main className="shell">
         <section id="home" className="hero">
-          <div className="orb" aria-hidden>
-            <span className="orb-x">X</span>
-          </div>
+          <span className="hero-kanji" aria-hidden>天使</span>
+          <span className="sparkle s1" aria-hidden>✦</span>
+          <span className="sparkle s2" aria-hidden>✧</span>
+          <span className="sparkle s3" aria-hidden>✦</span>
+          <PixelAngel className="hero-angel" />
           <p className="prompt">
             C:\&gt; <span className="typed">{c.tagline}</span>
             <span className="cursor">█</span>
@@ -120,7 +134,7 @@ export default function HomePage() {
           </a>
         </section>
 
-        <Window id="stats" title={c.stats.title}>
+        <Window id="stats" title={c.stats.title} card={c.cards.stats}>
           <div className="stats">
             <div className="stat level">
               <span className="stat-label">{c.stats.level}</span>
@@ -145,17 +159,17 @@ export default function HomePage() {
           </ul>
         </Window>
 
-        <Window id="music" title={c.music.title}>
+        <Window id="music" title={c.music.title} card={c.cards.music}>
           <p className="dim">// {c.music.sub}</p>
           <SpotifyTop5 copy={c.music} locale={locale} />
         </Window>
 
-        <Window id="projects" title={c.projects.title}>
+        <Window id="projects" title={c.projects.title} card={c.cards.projects}>
           <p className="dim">// {c.projects.sub}</p>
           <GithubProjects copy={c.projects} locale={locale} />
         </Window>
 
-        <Window id="log" title={c.log.title}>
+        <Window id="log" title={c.log.title} card={c.cards.log}>
           <ol className="log">
             {c.log.journey.map(([year, text]) => (
               <li key={year}>
@@ -172,7 +186,7 @@ export default function HomePage() {
           </ul>
         </Window>
 
-        <Window id="contact" title={c.contact.title}>
+        <Window id="contact" title={c.contact.title} card={c.cards.contact}>
           <p className="dim">// {c.contact.sub}</p>
           <dl className="contact">
             <div><dt>{c.contact.location}</dt><dd>{CONTACT.location}</dd></div>

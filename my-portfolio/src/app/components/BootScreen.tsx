@@ -1,8 +1,9 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import PixelAngel from "./PixelAngel";
 
-const SEEN_KEY = "booted-v1";
+const SEEN_KEY = "booted-v2";
 const LINE_MS = 260;
 
 export default function BootScreen({ lines, skipLabel }: { lines: string[]; skipLabel: string }) {
@@ -49,7 +50,7 @@ export default function BootScreen({ lines, skipLabel }: { lines: string[]; skip
 
   return (
     <div className={`boot ${leaving ? "boot-out" : ""}`} role="presentation">
-      <div className="boot-orb" aria-hidden />
+      <PixelAngel className="boot-angel" />
       <pre className="boot-text">
         {lines.slice(0, shown).join("\n")}
         <span className="cursor">█</span>

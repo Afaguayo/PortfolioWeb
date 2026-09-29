@@ -75,7 +75,7 @@ export default function GithubProjects({ copy, locale }: { copy: Copy["projects"
       <div className="repo-grid">
         {repos.map((r, i) => (
           <article key={r.name} className="repo-card" style={{ animationDelay: `${i * 60}ms` }}>
-            <div className="repo-slot">SLOT {String(i + 1).padStart(2, "0")}</div>
+            <div className="repo-slot">UNIT-{String(i + 1).padStart(2, "0")}</div>
             <h3 className="repo-name">{r.name}</h3>
             <p className="repo-desc">{r.description || copy.noDesc}</p>
             <div className="repo-meta">
