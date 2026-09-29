@@ -1,40 +1,57 @@
 {
-  "updated": "2026-09-29T04:08:17.249Z",
+  "updated": "2026-09-29T04:14:09.535Z",
   "tracks": [
     {
       "name": "Raging Wolf",
       "artists": "hiddeninthepast",
       "album": "Raging Wolf",
       "image": "https://i.scdn.co/image/ab67616d0000485189496fe021fba1ac3bfa4a3e",
-      "url": "https://open.spotify.com/track/4SMaxFaN4lqlYlkg6NgXN9"
+      "url": "https://open.spotify.com/track/4SMaxFaN4lqlYlkg6NgXN9",
+      "preview": null
     },
     {
       "name": "RAGING WOLF",
       "artists": "Sematary",
       "album": "RAGING WOLF",
       "image": "https://i.scdn.co/image/ab67616d000048513eaed361536abe380289199a",
-      "url": "https://open.spotify.com/track/4Ln2vkwyWjnUolcx4OxwcX"
+      "url": "https://open.spotify.com/track/4Ln2vkwyWjnUolcx4OxwcX",
+      "preview": {
+        "source": "deezer",
+        "id": 3946496431
+      }
     },
     {
       "name": "Decisions (feat. Miley Cyrus)",
       "artists": "Borgore, Miley Cyrus",
       "album": "#NEWGOREORDER",
       "image": "https://i.scdn.co/image/ab67616d000048517503b913671aade238f4c46e",
-      "url": "https://open.spotify.com/track/517P7amOGuc7fPE9xaSaLY"
+      "url": "https://open.spotify.com/track/517P7amOGuc7fPE9xaSaLY",
+      "preview": {
+        "source": "deezer",
+        "id": 2189118467
+      }
     },
     {
       "name": "REPENT MOTHERFUCKER",
       "artists": "onumi, CreepP",
       "album": "REPENT MOTHERFUCKER REMIXES",
       "image": "https://i.scdn.co/image/ab67616d00004851b6adaf9b2f727d87b67048ee",
-      "url": "https://open.spotify.com/track/7ah26lTqOpzH2T9ac7tLFr"
+      "url": "https://open.spotify.com/track/7ah26lTqOpzH2T9ac7tLFr",
+      "preview": {
+        "source": "deezer",
+        "id": 1915828427
+      }
     },
     {
       "name": "National Anthem",
       "artists": "Lana Del Rey",
       "album": "Born To Die (Deluxe Version)",
       "image": "https://i.scdn.co/image/ab67616d00004851959280fee07d485cb5b56fe7",
-      "url": "https://open.spotify.com/track/4YQEdFq6g95OrdksihaMgZ"
+      "url": "https://open.spotify.com/track/4YQEdFq6g95OrdksihaMgZ",
+      "preview": {
+        "source": "itunes",
+        "url": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/70/fb/f7/70fbf776-f9b0-2992-4413-8eff32128a5d/mzaf_6823331478217381713.plus.aac.p.m4a"
+      }
     }
   ]
 }
