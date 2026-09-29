@@ -1,6 +1,6 @@
 # ANGEL.OS: portfolio
 
-Original Xbox dashboard × DOS prompt × Y2K chrome. Next.js static export, hosted on AWS Amplify (`amplify.yml` at the repo root).
+Black & white cyber angel × 8-bit DOS. Next.js static export, deployed free to GitHub Pages at https://afaguayo.github.io/PortfolioWeb/ by `.github/workflows/pages.yml` on every push to main.
 
 ```bash
 npm install
@@ -13,7 +13,8 @@ npm run build    # static site in out/
 |---|---|
 | Age ("LEVEL") | Computed in the visitor's browser from the birthday in `src/lib/content.ts`, so it goes up every Nov 30 with no redeploy. |
 | Projects | Fetched live from `api.github.com/users/Afaguayo/repos` (public, non-fork, non-archived, newest first). Hide a repo with `HIDDEN_REPOS` in `src/lib/content.ts`. A repo's GitHub description and homepage show up on its card. |
-| Spotify top 5 | `.github/workflows/spotify-top5.yml` runs every 6 hours, writes `spotify.json` to the `spotify-data` branch, and the page reads it from raw.githubusercontent.com. No rebuild needed. |
+| Spotify top 5 | `.github/workflows/live-feeds.yml` runs every 6 hours and writes `spotify.json` to the `live-data` branch; the page reads it from raw.githubusercontent.com. No rebuild needed. |
+| Steam top 5 | Same workflow writes `steam.json`: most-played games over the last 30 days, computed from daily playtime snapshots in `steam-history.json` (Steam's API has no monthly stat). Until 30 days of snapshots exist it shows Steam's last-2-weeks numbers and says so. |
 
 All text (EN/ES) and contact info live in `src/lib/content.ts`.
 
@@ -24,4 +25,13 @@ All text (EN/ES) and contact info live in `src/lib/content.ts`.
    SPOTIFY_CLIENT_ID=xxx SPOTIFY_CLIENT_SECRET=yyy node scripts/spotify-auth.mjs
    ```
    It opens Spotify, you click **Agree**, and it saves the three `SPOTIFY_*` secrets to this repo with `gh`.
-3. Run the workflow once: `gh workflow run "Spotify top 5" --repo Afaguayo/PortfolioWeb` (scheduled runs only start after the workflow is on `main`).
+3. Run the feeds once: `gh workflow run "Live feeds" --repo Afaguayo/PortfolioWeb`.
+
+## Connecting Steam (one time)
+1. Get a Web API key at https://steamcommunity.com/dev/apikey.
+2. Steam profile → Edit Profile → Privacy Settings → **Game details: Public**.
+3. Save the key and your SteamID64 (or custom profile name) as secrets:
+   ```bash
+   gh secret set STEAM_API_KEY --repo Afaguayo/PortfolioWeb
+   gh secret set STEAM_ID --repo Afaguayo/PortfolioWeb
+   ```
