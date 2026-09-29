@@ -68,6 +68,10 @@ export const t = {
       title: "NOW_SPINNING.TOP5",
       sub: "my most-played tracks this month, straight from Spotify",
       offline: "signal lost: spotify feed offline",
+      play: "Play 30s preview",
+      stop: "Stop preview",
+      noPreview: "No preview available; open in Spotify",
+      previewNote: "▶ plays a 30s preview",
       updated: "updated",
     },
     projects: {
@@ -159,6 +163,10 @@ export const t = {
       title: "SONANDO.TOP5",
       sub: "mis canciones más escuchadas del mes, directo de Spotify",
       offline: "señal perdida: spotify sin conexión",
+      play: "Reproducir 30s",
+      stop: "Detener",
+      noPreview: "Sin vista previa; abrir en Spotify",
+      previewNote: "▶ reproduce 30s de la canción",
       updated: "actualizado",
     },
     projects: {

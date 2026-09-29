@@ -38,6 +38,31 @@ const tracks = items.map((t) => ({
   url: t.external_urls.spotify,
 }));
 
+// Spotify no longer returns preview clips to new apps, so find a 30s preview elsewhere.
+// Deezer preview links expire, so only its track id is stored and the page fetches a fresh
+// link on click; iTunes preview links are stable and stored as-is.
+const norm = (s) => s.toLowerCase().replace(/\(.*?\)|\[.*?\]|feat\..*$/g, "").replace(/[^a-z0-9]/g, "");
+
+async function findPreview(name, artists) {
+  const first = artists.split(",")[0].trim();
+  const same = (title, artist) => norm(title) === norm(name) && norm(artist).includes(norm(first));
+  try {
+    const q = `${name.replace(/\(.*?\)/g, "").trim()} ${first}`;
+    const dz = await (await fetch("https://api.deezer.com/search?" + new URLSearchParams({ q, limit: "25" }))).json();
+    const hit = (dz.data ?? []).find((x) => x.preview && same(x.title, x.artist.name));
+    if (hit) return { source: "deezer", id: hit.id };
+  } catch {}
+  try {
+    const params = new URLSearchParams({ term: `${name} ${first}`, media: "music", entity: "song", limit: "25" });
+    const it = await (await fetch("https://itunes.apple.com/search?" + params)).json();
+    const hit = (it.results ?? []).find((x) => x.previewUrl && same(x.trackName, x.artistName));
+    if (hit) return { source: "itunes", url: hit.previewUrl };
+  } catch {}
+  return null;
+}
+
+for (const t of tracks) t.preview = await findPreview(t.name, t.artists);
+
 writeFileSync(out, JSON.stringify({ updated: new Date().toISOString(), tracks }, null, 2) + "\n");
 console.log(`wrote ${tracks.length} tracks to ${out}:`);
-tracks.forEach((t, i) => console.log(`  ${i + 1}. ${t.name} - ${t.artists}`));
+tracks.forEach((t, i) => console.log(`  ${i + 1}. ${t.name} - ${t.artists} [preview: ${t.preview?.source ?? "none"}]`));

@@ -353,3 +353,25 @@ a { color: inherit; }
 .off-duty { line-height: 1.8; text-align: center; }
 .off-duty::before, .off-duty::after { min-width: 16px; }
 @media (max-width: 520px) { .off-duty { font-size: 8px; gap: 8px; letter-spacing: .1em; } }
+
+/* ---------- Song previews ---------- */
+.track-play { display: flex; align-items: center; gap: 10px; }
+.play-btn {
+  display: grid; place-items: center; width: 34px; height: 34px; padding: 0;
+  font: 12px var(--pixel); line-height: 1; text-decoration: none; cursor: pointer;
+  color: var(--bg); background: var(--pearl);
+  border: 0; clip-path: var(--notch); --px: 3px;
+  box-shadow: inset -3px -3px 0 var(--ash), inset 3px 3px 0 #fff;
+}
+.play-btn:hover { background: var(--pearl-hi); }
+.play-btn:active { box-shadow: inset 3px 3px 0 var(--ash); }
+.play-btn:disabled { cursor: wait; opacity: .7; }
+.play-btn:focus-visible { outline: 2px solid var(--pearl-hi); outline-offset: 2px; }
+.play-btn.off { background: transparent; color: var(--ash); box-shadow: inset 0 0 0 2px var(--line); }
+.track.is-playing { border-color: var(--pearl-hi); background: rgba(245,245,247,.08); }
+.track.is-playing .track-art { filter: none; }
+@media (max-width: 520px) {
+  .track { grid-template-columns: 30px 48px 1fr auto; }
+  .track-play .eq { display: none; }
+}
+.play-btn { font: 15px/1 system-ui, -apple-system, "Segoe UI", sans-serif; }
