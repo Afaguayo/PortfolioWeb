@@ -2,10 +2,7 @@
 
 import { useEffect, useState } from "react";
 import type { Copy } from "@/lib/content";
-
-// Written every 6 hours by .github/workflows/spotify-top5.yml onto the
-// `spotify-data` branch, so refreshing the list never triggers a site rebuild.
-const FEED = "https://raw.githubusercontent.com/Afaguayo/PortfolioWeb/spotify-data/spotify.json";
+import { loadFeed } from "@/lib/feeds";
 
 type Track = { name: string; artists: string; album: string; image: string | null; url: string };
 type Feed = { updated: string; tracks: Track[] };
@@ -15,11 +12,8 @@ export default function SpotifyTop5({ copy, locale }: { copy: Copy["music"]; loc
   const [failed, setFailed] = useState(false);
 
   useEffect(() => {
-    // Cache-bust per 10 minutes so the CDN copy stays fresh without refetching every visit.
-    const bucket = Math.floor(Date.now() / 600000);
-    fetch(`${FEED}?v=${bucket}`)
-      .then((r) => (r.ok ? r.json() : Promise.reject(r.status)))
-      .then((data: Feed) => (data.tracks?.length ? setFeed(data) : setFailed(true)))
+    loadFeed<Feed>("spotify.json")
+      .then((data) => (data.tracks?.length ? setFeed(data) : setFailed(true)))
       .catch(() => setFailed(true));
   }, []);
 

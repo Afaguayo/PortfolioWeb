@@ -1,0 +1,70 @@
+name: Live feeds
+
+# Refreshes the fun section of the site: Spotify top 5 and Steam top 5.
+# Files live on the `live-data` branch (not main), so updates never rebuild the site;
+# the page reads them from raw.githubusercontent.com.
+on:
+  schedule:
+    - cron: "17 */6 * * *"
+  workflow_dispatch:
+  # Also refresh whenever a feed script or this workflow changes.
+  push:
+    branches: [main]
+    paths:
+      - my-portfolio/scripts/spotify-top5.mjs
+      - my-portfolio/scripts/steam-top5.mjs
+      - .github/workflows/live-feeds.yml
+
+permissions:
+  contents: write
+
+concurrency:
+  group: live-data
+  cancel-in-progress: false
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    env:
+      DATA: ${{ github.workspace }}/../live-data
+      SPOTIFY_CLIENT_ID: ${{ secrets.SPOTIFY_CLIENT_ID }}
+      SPOTIFY_CLIENT_SECRET: ${{ secrets.SPOTIFY_CLIENT_SECRET }}
+      SPOTIFY_REFRESH_TOKEN: ${{ secrets.SPOTIFY_REFRESH_TOKEN }}
+      STEAM_API_KEY: ${{ secrets.STEAM_API_KEY }}
+      STEAM_ID: ${{ secrets.STEAM_ID }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      # Start from the current data branch so Steam's daily history carries over.
+      - name: Load live-data branch
+        run: |
+          if git ls-remote --exit-code --heads origin live-data >/dev/null; then
+            git clone -q --depth 1 -b live-data "https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${GITHUB_REPOSITORY}.git" "$DATA"
+          else
+            mkdir -p "$DATA" && git -C "$DATA" init -q -b live-data
+            git -C "$DATA" remote add origin "https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${GITHUB_REPOSITORY}.git"
+          fi
+
+      - name: Spotify top 5
+        if: env.SPOTIFY_REFRESH_TOKEN != ''
+        continue-on-error: true
+        run: node my-portfolio/scripts/spotify-top5.mjs "$DATA/spotify.json"
+
+      - name: Steam top 5
+        if: env.STEAM_API_KEY != ''
+        continue-on-error: true
+        run: node my-portfolio/scripts/steam-top5.mjs "$DATA"
+
+      - name: Publish
+        working-directory: ${{ env.DATA }}
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          if git diff --cached --quiet; then echo "nothing changed"; exit 0; fi
+          git commit -q -m "Update live feeds"
+          git push -q origin live-data

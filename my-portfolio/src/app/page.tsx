@@ -5,10 +5,11 @@ import BootScreen from "./components/BootScreen";
 import GithubProjects from "./components/GithubProjects";
 import PixelAngel from "./components/PixelAngel";
 import SpotifyTop5 from "./components/SpotifyTop5";
+import SteamTop5 from "./components/SteamTop5";
 import { ageOn, daysToNextBirthday } from "@/lib/age";
 import { CONTACT, skills, t, type Lang } from "@/lib/content";
 
-const SECTIONS = ["home", "stats", "music", "projects", "log", "contact"] as const;
+const SECTIONS = ["home", "stats", "projects", "log", "contact", "music", "games"] as const;
 const LANG_KEY = "lang";
 
 type Card = { ep: string; card: string };
@@ -53,7 +54,7 @@ export default function HomePage() {
     } catch {}
   }, [lang]);
 
-  // Number keys 1-6 jump between sections, like a controller shortcut.
+  // Number keys 1-7 jump between sections, like a controller shortcut.
   useEffect(() => {
     const onKey = (e: KeyboardEvent) => {
       if (e.metaKey || e.ctrlKey || e.altKey) return;
@@ -157,11 +158,6 @@ export default function HomePage() {
           </ul>
         </Window>
 
-        <Window id="music" title={c.music.title} card={c.cards.music}>
-          <p className="dim">// {c.music.sub}</p>
-          <SpotifyTop5 copy={c.music} locale={locale} />
-        </Window>
-
         <Window id="projects" title={c.projects.title} card={c.cards.projects}>
           <p className="dim">// {c.projects.sub}</p>
           <GithubProjects copy={c.projects} locale={locale} />
@@ -197,6 +193,19 @@ export default function HomePage() {
               {c.contact.resume}
             </a>
           </div>
+        </Window>
+
+        <div className="off-duty" aria-hidden>
+          <span>✦</span> {c.offDuty} <span>✦</span>
+        </div>
+
+        <Window id="music" title={c.music.title} card={c.cards.music}>
+          <p className="dim">// {c.music.sub}</p>
+          <SpotifyTop5 copy={c.music} locale={locale} />
+        </Window>
+
+        <Window id="games" title={c.games.title} card={c.cards.games}>
+          <SteamTop5 copy={c.games} locale={locale} />
         </Window>
 
         <footer className="footer">
