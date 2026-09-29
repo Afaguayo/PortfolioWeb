@@ -1,36 +1,27 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# ANGEL.OS: portfolio
 
-## Getting Started
-
-First, run the development server:
+Original Xbox dashboard × DOS prompt × Y2K chrome. Next.js static export, hosted on AWS Amplify (`amplify.yml` at the repo root).
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+npm install
+npm run dev      # http://localhost:3000
+npm run build    # static site in out/
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## What updates by itself
+| Thing | How |
+|---|---|
+| Age ("LEVEL") | Computed in the visitor's browser from the birthday in `src/lib/content.ts`, so it goes up every Nov 30 with no redeploy. |
+| Projects | Fetched live from `api.github.com/users/Afaguayo/repos` (public, non-fork, non-archived, newest first). Hide a repo with `HIDDEN_REPOS` in `src/lib/content.ts`. A repo's GitHub description and homepage show up on its card. |
+| Spotify top 5 | `.github/workflows/spotify-top5.yml` runs every 6 hours, writes `spotify.json` to the `spotify-data` branch, and the page reads it from raw.githubusercontent.com. No rebuild needed. |
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+All text (EN/ES) and contact info live in `src/lib/content.ts`.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Connecting Spotify (one time)
+1. Go to https://developer.spotify.com/dashboard → **Create app**. Any name; Redirect URI `http://127.0.0.1:8888/callback`; API: **Web API**.
+2. Copy the app's **Client ID** and **Client secret**, then from `my-portfolio/` run:
+   ```bash
+   SPOTIFY_CLIENT_ID=xxx SPOTIFY_CLIENT_SECRET=yyy node scripts/spotify-auth.mjs
+   ```
+   It opens Spotify, you click **Agree**, and it saves the three `SPOTIFY_*` secrets to this repo with `gh`.
+3. Run the workflow once: `gh workflow run "Spotify top 5" --repo Afaguayo/PortfolioWeb` (scheduled runs only start after the workflow is on `main`).
