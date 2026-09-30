@@ -1,5 +1,5 @@
 {
-  "updated": "2026-09-30T12:30:55.950Z",
+  "updated": "2026-09-30T22:13:14.584Z",
   "tracks": [
     {
       "name": "Raging Wolf",
@@ -43,14 +43,14 @@
       }
     },
     {
-      "name": "National Anthem",
-      "artists": "Lana Del Rey",
-      "album": "Born To Die (Deluxe Version)",
-      "image": "https://i.scdn.co/image/ab67616d00004851959280fee07d485cb5b56fe7",
-      "url": "https://open.spotify.com/track/4YQEdFq6g95OrdksihaMgZ",
+      "name": "Kingslayer (feat. BABYMETAL)",
+      "artists": "Bring Me The Horizon, BABYMETAL",
+      "album": "POST HUMAN: SURVIVAL HORROR",
+      "image": "https://i.scdn.co/image/ab67616d000048515149c948fde506624246a684",
+      "url": "https://open.spotify.com/track/7CAbF0By0Fpnbiu6Xn5ZF7",
       "preview": {
-        "source": "itunes",
-        "url": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/70/fb/f7/70fbf776-f9b0-2992-4413-8eff32128a5d/mzaf_6823331478217381713.plus.aac.p.m4a"
+        "source": "deezer",
+        "id": 1122999552
       }
     }
   ]
