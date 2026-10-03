@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-02T22:11:44.695Z",
+  "updated": "2026-10-03T05:15:37.065Z",
   "tracks": [
     {
       "name": "RAGING WOLF",
@@ -11,14 +11,6 @@
         "source": "deezer",
         "id": 3946496431
       }
-    },
-    {
-      "name": "Raging Wolf",
-      "artists": "hiddeninthepast",
-      "album": "Raging Wolf",
-      "image": "https://i.scdn.co/image/ab67616d00004851526df141c1b0d9e6b224757e",
-      "url": "https://open.spotify.com/track/180zFK5wjrtlf1D2ZKFbxc",
-      "preview": null
     },
     {
       "name": "Decisions (feat. Miley Cyrus)",
@@ -41,6 +33,14 @@
         "source": "deezer",
         "id": 1915828427
       }
+    },
+    {
+      "name": "Raging Wolf",
+      "artists": "hiddeninthepast",
+      "album": "Raging Wolf",
+      "image": "https://i.scdn.co/image/ab67616d00004851526df141c1b0d9e6b224757e",
+      "url": "https://open.spotify.com/track/180zFK5wjrtlf1D2ZKFbxc",
+      "preview": null
     },
     {
       "name": "Kingslayer (feat. BABYMETAL)",
