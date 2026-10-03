@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-03T16:15:30.946Z",
+  "updated": "2026-10-03T21:12:20.492Z",
   "tracks": [
     {
       "name": "RAGING WOLF",
@@ -35,17 +35,6 @@
       }
     },
     {
-      "name": "Raging Wolf",
-      "artists": "hiddeninthepast",
-      "album": "Raging Wolf",
-      "image": "https://i.scdn.co/image/ab67616d00004851526df141c1b0d9e6b224757e",
-      "url": "https://open.spotify.com/track/180zFK5wjrtlf1D2ZKFbxc",
-      "preview": {
-        "source": "deezer",
-        "id": 4318747722
-      }
-    },
-    {
       "name": "Kingslayer (feat. BABYMETAL)",
       "artists": "Bring Me The Horizon, BABYMETAL",
       "album": "POST HUMAN: SURVIVAL HORROR",
@@ -54,6 +43,17 @@
       "preview": {
         "source": "deezer",
         "id": 3369015401
+      }
+    },
+    {
+      "name": "Raging Wolf",
+      "artists": "hiddeninthepast",
+      "album": "Raging Wolf",
+      "image": "https://i.scdn.co/image/ab67616d00004851526df141c1b0d9e6b224757e",
+      "url": "https://open.spotify.com/track/180zFK5wjrtlf1D2ZKFbxc",
+      "preview": {
+        "source": "deezer",
+        "id": 4318747722
       }
     }
   ]
