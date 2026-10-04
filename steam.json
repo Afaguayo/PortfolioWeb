@@ -1,18 +1,36 @@
 {
-  "updated": "2026-10-03T21:12:20.768Z",
+  "updated": "2026-10-04T05:49:12.460Z",
   "window": "2weeks",
   "games": [
     {
       "name": "Deadlock",
-      "hours": 8.8,
+      "hours": 2.8,
       "image": "https://cdn.cloudflare.steamstatic.com/steam/apps/1422450/capsule_184x69.jpg",
       "url": "https://store.steampowered.com/app/1422450/"
     },
     {
+      "name": "Desert Stalker",
+      "hours": 1.2,
+      "image": "https://cdn.cloudflare.steamstatic.com/steam/apps/2899050/capsule_184x69.jpg",
+      "url": "https://store.steampowered.com/app/2899050/"
+    },
+    {
+      "name": "Grand Theft Auto IV: The Complete Edition",
+      "hours": 0.8,
+      "image": "https://cdn.cloudflare.steamstatic.com/steam/apps/12210/capsule_184x69.jpg",
+      "url": "https://store.steampowered.com/app/12210/"
+    },
+    {
       "name": "Arma Reforger",
-      "hours": 0.6,
+      "hours": 0.7,
       "image": "https://cdn.cloudflare.steamstatic.com/steam/apps/1874880/capsule_184x69.jpg",
       "url": "https://store.steampowered.com/app/1874880/"
+    },
+    {
+      "name": "Ready or Not",
+      "hours": 0.1,
+      "image": "https://cdn.cloudflare.steamstatic.com/steam/apps/1144200/capsule_184x69.jpg",
+      "url": "https://store.steampowered.com/app/1144200/"
     }
   ]
 }
