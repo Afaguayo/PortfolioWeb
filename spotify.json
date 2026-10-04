@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-04T12:18:32.781Z",
+  "updated": "2026-10-04T21:21:29.418Z",
   "tracks": [
     {
       "name": "RAGING WOLF",
@@ -46,14 +46,14 @@
       }
     },
     {
-      "name": "Raging Wolf",
-      "artists": "hiddeninthepast",
-      "album": "Raging Wolf",
-      "image": "https://i.scdn.co/image/ab67616d00004851526df141c1b0d9e6b224757e",
-      "url": "https://open.spotify.com/track/180zFK5wjrtlf1D2ZKFbxc",
+      "name": "Why Don’t You Say So (feat. Avery Anna)",
+      "artists": "Dexter and The Moonrocks, Avery Anna",
+      "album": "Friends That I Don't Like",
+      "image": "https://i.scdn.co/image/ab67616d0000485193b6342d3037b1972e457bc4",
+      "url": "https://open.spotify.com/track/0JTvM3WnB7C2X8LxOcnCS5",
       "preview": {
         "source": "deezer",
-        "id": 4318747722
+        "id": 4305280402
       }
     }
   ]
