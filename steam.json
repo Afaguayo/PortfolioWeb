@@ -1,10 +1,10 @@
 {
-  "updated": "2026-10-04T21:21:29.872Z",
+  "updated": "2026-10-05T05:35:23.111Z",
   "window": "2weeks",
   "games": [
     {
       "name": "Deadlock",
-      "hours": 2.7,
+      "hours": 2.6,
       "image": "https://cdn.cloudflare.steamstatic.com/steam/apps/1422450/capsule_184x69.jpg",
       "url": "https://store.steampowered.com/app/1422450/"
     },
