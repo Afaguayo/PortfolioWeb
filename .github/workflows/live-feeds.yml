@@ -13,6 +13,7 @@ on:
     paths:
       - my-portfolio/scripts/spotify-top5.mjs
       - my-portfolio/scripts/steam-top5.mjs
+      - my-portfolio/scripts/steam-blocklist.json
       - .github/workflows/live-feeds.yml
 
 permissions:
