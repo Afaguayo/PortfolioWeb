@@ -9,6 +9,25 @@
 import { existsSync, readFileSync, writeFileSync } from "node:fs";
 import { join } from "node:path";
 
+// Optional filter from the STEAM_FILTER env var (JSON: { appids, names, flags }), kept out of
+// the repo. Games matching an appid or name fragment, or carrying one of the store's content
+// flags, are skipped. Fails open if the store API errors, so a flaky request never empties the list.
+const filter = JSON.parse(process.env.STEAM_FILTER || "{}");
+const { appids = [], names = [], flags = [] } = filter;
+const skippedByList = (g) =>
+  appids.includes(g.appid) || names.some((n) => g.name?.toLowerCase().includes(n.toLowerCase()));
+async function skippedByFlags(appid) {
+  if (!flags.length) return false;
+  try {
+    const res = await fetch(`https://store.steampowered.com/api/appdetails?appids=${appid}&filters=content_descriptors`);
+    if (!res.ok) return false;
+    const ids = (await res.json())?.[appid]?.data?.content_descriptors?.ids ?? [];
+    return ids.some((id) => flags.includes(id));
+  } catch {
+    return false;
+  }
+}
+
 const { STEAM_API_KEY: key, STEAM_ID: idOrName } = process.env;
 const dir = process.argv[2] ?? ".";
 const HISTORY = join(dir, "steam-history.json");
@@ -59,17 +78,23 @@ const baseline = [...history.snapshots].reverse().find((s) => Date.parse(today) 
 const minutes = (g) =>
   baseline ? g.playtime_forever - (baseline.playtime[g.appid] ?? 0) : g.playtime_2weeks ?? 0;
 
-const top = games
+// Walk games by playtime and keep the first 5 that pass the filter.
+const ranked = games
   .map((g) => ({ g, m: minutes(g) }))
   .filter(({ m }) => m > 0)
-  .sort((a, b) => b.m - a.m)
-  .slice(0, 5)
-  .map(({ g, m }) => ({
+  .sort((a, b) => b.m - a.m);
+
+const top = [];
+for (const { g, m } of ranked) {
+  if (top.length === 5) break;
+  if (skippedByList(g) || (await skippedByFlags(g.appid))) continue;
+  top.push({
     name: g.name,
     hours: Math.round((m / 60) * 10) / 10,
     image: `https://cdn.cloudflare.steamstatic.com/steam/apps/${g.appid}/capsule_184x69.jpg`,
     url: `https://store.steampowered.com/app/${g.appid}/`,
-  }));
+  });
+}
 
 const feed = { updated: new Date().toISOString(), window: baseline ? "month" : "2weeks", games: top };
 writeFileSync(join(dir, "steam.json"), JSON.stringify(feed, null, 2) + "\n");

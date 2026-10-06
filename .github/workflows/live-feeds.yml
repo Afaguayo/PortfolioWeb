@@ -32,6 +32,7 @@ jobs:
       SPOTIFY_REFRESH_TOKEN: ${{ secrets.SPOTIFY_REFRESH_TOKEN }}
       STEAM_API_KEY: ${{ secrets.STEAM_API_KEY }}
       STEAM_ID: ${{ secrets.STEAM_ID }}
+      STEAM_FILTER: ${{ secrets.STEAM_FILTER }}
     steps:
       - uses: actions/checkout@v4
 
