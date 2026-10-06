@@ -1,0 +1,5 @@
+{
+  "_comment": "Games that never show in the Steam top 5. Add an appid or a lowercase name fragment. Games Steam itself flags as adult-only/frequent nudity are also hidden automatically (see steam-top5.mjs).",
+  "appids": [],
+  "nameContains": ["desert stalker"]
+}

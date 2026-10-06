@@ -9,6 +9,27 @@
 import { existsSync, readFileSync, writeFileSync } from "node:fs";
 import { join } from "node:path";
 
+// Manual blocklist: appids and lowercase name fragments that never get shown.
+const blocklist = JSON.parse(readFileSync(new URL("./steam-blocklist.json", import.meta.url), "utf8"));
+const blockedByList = (g) =>
+  blocklist.appids.includes(g.appid) ||
+  blocklist.nameContains.some((n) => g.name?.toLowerCase().includes(n.toLowerCase()));
+
+// Automatic filter: Steam's store tags adult games with content descriptor 3 (adult only
+// sexual content) or 4 (frequent nudity/sexual content). Fails open if the store API errors,
+// so a flaky request never empties the list; the manual blocklist still applies.
+const ADULT_DESCRIPTORS = [3, 4];
+async function flaggedAdult(appid) {
+  try {
+    const res = await fetch(`https://store.steampowered.com/api/appdetails?appids=${appid}&filters=content_descriptors`);
+    if (!res.ok) return false;
+    const ids = (await res.json())?.[appid]?.data?.content_descriptors?.ids ?? [];
+    return ids.some((id) => ADULT_DESCRIPTORS.includes(id));
+  } catch {
+    return false;
+  }
+}
+
 const { STEAM_API_KEY: key, STEAM_ID: idOrName } = process.env;
 const dir = process.argv[2] ?? ".";
 const HISTORY = join(dir, "steam-history.json");
@@ -59,17 +80,27 @@ const baseline = [...history.snapshots].reverse().find((s) => Date.parse(today) 
 const minutes = (g) =>
   baseline ? g.playtime_forever - (baseline.playtime[g.appid] ?? 0) : g.playtime_2weeks ?? 0;
 
-const top = games
+// Walk games by playtime and keep the first 5 that pass both filters.
+const ranked = games
   .map((g) => ({ g, m: minutes(g) }))
   .filter(({ m }) => m > 0)
-  .sort((a, b) => b.m - a.m)
-  .slice(0, 5)
-  .map(({ g, m }) => ({
+  .sort((a, b) => b.m - a.m);
+
+const top = [];
+for (const { g, m } of ranked) {
+  if (top.length === 5) break;
+  if (blockedByList(g)) continue;
+  if (await flaggedAdult(g.appid)) {
+    console.log(`hiding adult-flagged game: ${g.name}`);
+    continue;
+  }
+  top.push({
     name: g.name,
     hours: Math.round((m / 60) * 10) / 10,
     image: `https://cdn.cloudflare.steamstatic.com/steam/apps/${g.appid}/capsule_184x69.jpg`,
     url: `https://store.steampowered.com/app/${g.appid}/`,
-  }));
+  });
+}
 
 const feed = { updated: new Date().toISOString(), window: baseline ? "month" : "2weeks", games: top };
 writeFileSync(join(dir, "steam.json"), JSON.stringify(feed, null, 2) + "\n");
