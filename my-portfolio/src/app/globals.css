@@ -309,6 +309,10 @@ a { color: inherit; }
 .small { font-size: 16px; }
 .right { text-align: right; }
 .center { text-align: center; }
+.coursework { margin: 14px 0 18px; padding: 10px 14px; border: 1px dashed var(--line); }
+.coursework summary { cursor: pointer; font-weight: 700; letter-spacing: .06em; }
+.coursework ul { margin: 10px 0 0; padding-left: 18px; columns: 2 220px; }
+.coursework li { margin: 4px 0; break-inside: avoid; }
 .cursor { animation: blink 1s steps(1) infinite; color: var(--pearl-hi); }
 .blink-cursor::after { content: "█"; margin-left: 4px; animation: blink 1s steps(1) infinite; }
 @keyframes blink { 50% { opacity: 0 } }

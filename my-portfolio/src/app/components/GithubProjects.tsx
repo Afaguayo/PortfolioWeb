@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { CONTACT, GITHUB_USER, HIDDEN_REPOS, type Copy } from "@/lib/content";
+import { CONTACT, GITHUB_USER, HIDDEN_REPOS, SCHOOL_REPOS, type Copy } from "@/lib/content";
 
 type Repo = {
   name: string;
@@ -70,10 +70,13 @@ export default function GithubProjects({ copy, locale }: { copy: Copy["projects"
 
   if (!repos) return <p className="dim blink-cursor">{copy.loading}</p>;
 
+  const projects = repos.filter((r) => !SCHOOL_REPOS.includes(r.name));
+  const coursework = repos.filter((r) => SCHOOL_REPOS.includes(r.name));
+
   return (
     <>
       <div className="repo-grid">
-        {repos.map((r, i) => (
+        {projects.map((r, i) => (
           <article key={r.name} className="repo-card" style={{ animationDelay: `${i * 60}ms` }}>
             <div className="repo-slot">UNIT-{String(i + 1).padStart(2, "0")}</div>
             <h3 className="repo-name">{r.name}</h3>
@@ -99,6 +102,23 @@ export default function GithubProjects({ copy, locale }: { copy: Copy["projects"
           </article>
         ))}
       </div>
+      {coursework.length > 0 && (
+        <details className="coursework">
+          <summary>
+            {copy.coursework} ({coursework.length})
+          </summary>
+          <ul>
+            {coursework.map((r) => (
+              <li key={r.name}>
+                <a className="link" href={r.html_url} target="_blank" rel="noopener noreferrer">
+                  {r.name}
+                </a>
+                {r.language && <span className="dim small"> · {r.language}</span>}
+              </li>
+            ))}
+          </ul>
+        </details>
+      )}
       <div className="center">
         <a className="btn-orb" href={CONTACT.github} target="_blank" rel="noopener noreferrer">
           {copy.all}

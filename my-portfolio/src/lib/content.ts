@@ -6,6 +6,18 @@ export const BIRTHDAY = { year: 2002, month: 11, day: 30 }; // Nov 30, 2002
 // Repos to hide from the live GitHub list (the profile README repo, etc.).
 export const HIDDEN_REPOS = ["Afaguayo"];
 
+// Class projects: kept off the main grid and listed under a collapsed "coursework" section.
+export const SCHOOL_REPOS = [
+  "TRACE-subsytem-1",
+  "TICKETMINER",
+  "PA2-Decision-Makiong",
+  "Minecraft-AI-Agent",
+  "s24-video-player",
+  "File-Transfer",
+  "Shell",
+  "Archiver",
+];
+
 export const CONTACT = {
   location: "Chihuahua, Chihuahua, MX",
   phoneDisplay: "+52 614 154 2124",
@@ -84,6 +96,7 @@ export const t = {
       updated: "updated",
       all: "VIEW ALL ON GITHUB",
       noDesc: "no description yet",
+      coursework: "COURSEWORK // class projects",
     },
     log: {
       title: "JOURNEY.LOG",
@@ -179,6 +192,7 @@ export const t = {
       updated: "actualizado",
       all: "VER TODO EN GITHUB",
       noDesc: "sin descripción aún",
+      coursework: "CURSOS // proyectos de clase",
     },
     log: {
       title: "TRAYECTORIA.LOG",
