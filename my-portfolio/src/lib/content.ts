@@ -25,6 +25,7 @@ export const CONTACT = {
   email: "angelaguayo78@outlook.com",
   github: "https://github.com/Afaguayo",
   resume: `${process.env.NEXT_PUBLIC_BASE_PATH || ""}/Angel%20Aguayo%20Resume.pdf`,
+  resumeEs: `${process.env.NEXT_PUBLIC_BASE_PATH || ""}/Angel%20Aguayo%20CV.pdf`,
 };
 
 export const skills = [

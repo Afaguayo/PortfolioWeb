@@ -189,7 +189,7 @@ export default function HomePage() {
             <div><dt>{c.contact.github}</dt><dd><a className="link" href={CONTACT.github} target="_blank" rel="noopener noreferrer">github.com/Afaguayo</a></dd></div>
           </dl>
           <div className="center">
-            <a className="btn-orb" href={CONTACT.resume} download>
+            <a className="btn-orb" href={lang === "es" ? CONTACT.resumeEs : CONTACT.resume} download>
               {c.contact.resume}
             </a>
           </div>
