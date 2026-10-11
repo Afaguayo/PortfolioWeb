@@ -3,13 +3,14 @@
 import { useEffect, useState, type ReactNode } from "react";
 import BootScreen from "./components/BootScreen";
 import GithubProjects from "./components/GithubProjects";
+import KaggleEntries from "./components/KaggleEntries";
 import PixelAngel from "./components/PixelAngel";
 import SpotifyTop5 from "./components/SpotifyTop5";
 import SteamTop5 from "./components/SteamTop5";
 import { ageOn, daysToNextBirthday } from "@/lib/age";
 import { CONTACT, skills, t, type Lang } from "@/lib/content";
 
-const SECTIONS = ["home", "stats", "projects", "log", "contact", "music", "games"] as const;
+const SECTIONS = ["home", "stats", "projects", "kaggle", "log", "contact", "music", "games"] as const;
 const LANG_KEY = "lang";
 
 type Card = { ep: string; card: string };
@@ -54,7 +55,7 @@ export default function HomePage() {
     } catch {}
   }, [lang]);
 
-  // Number keys 1-7 jump between sections, like a controller shortcut.
+  // Number keys 1-8 jump between sections, like a controller shortcut.
   useEffect(() => {
     const onKey = (e: KeyboardEvent) => {
       if (e.metaKey || e.ctrlKey || e.altKey) return;
@@ -161,6 +162,11 @@ export default function HomePage() {
         <Window id="projects" title={c.projects.title} card={c.cards.projects}>
           <p className="dim">// {c.projects.sub}</p>
           <GithubProjects copy={c.projects} locale={locale} />
+        </Window>
+
+        <Window id="kaggle" title={c.kaggle.title} card={c.cards.kaggle}>
+          <p className="dim">// {c.kaggle.sub}</p>
+          <KaggleEntries copy={c.kaggle} />
         </Window>
 
         <Window id="log" title={c.log.title} card={c.cards.log}>

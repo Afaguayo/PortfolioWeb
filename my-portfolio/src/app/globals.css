@@ -293,6 +293,11 @@ a { color: inherit; }
 .chip { font-size: 16px; padding: 0 6px; border: 1px solid var(--line); color: var(--lilac); }
 .repo-actions { display: flex; gap: 8px; margin-top: 4px; }
 
+/* ---------- Kaggle (reuses the repo cards) ---------- */
+.kaggle-score { margin-top: auto; }
+.kaggle-value { font: 14px var(--pixel); color: var(--pearl-hi); text-shadow: 2px 2px 0 rgba(255,255,255,.3); margin-left: auto; }
+.kaggle-links { display: flex; flex-wrap: wrap; justify-content: center; gap: 12px; }
+
 /* ---------- Log / experience ---------- */
 .log { list-style: none; margin: 0; padding: 0; display: grid; gap: 6px; }
 .log-year { color: var(--nerv); display: inline-block; min-width: 72px; }
