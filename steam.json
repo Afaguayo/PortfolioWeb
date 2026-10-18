@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-18T04:28:37.820Z",
+  "updated": "2026-10-18T11:00:47.146Z",
   "window": "2weeks",
   "games": [
     {
@@ -7,6 +7,12 @@
       "hours": 2.4,
       "image": "https://cdn.cloudflare.steamstatic.com/steam/apps/1422450/capsule_184x69.jpg",
       "url": "https://store.steampowered.com/app/1422450/"
+    },
+    {
+      "name": "Project Zomboid",
+      "hours": 0.3,
+      "image": "https://cdn.cloudflare.steamstatic.com/steam/apps/108600/capsule_184x69.jpg",
+      "url": "https://store.steampowered.com/app/108600/"
     },
     {
       "name": "Wallpaper Engine",
