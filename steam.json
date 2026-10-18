@@ -1,30 +1,12 @@
 {
-  "updated": "2026-10-17T20:34:24.771Z",
+  "updated": "2026-10-18T04:28:37.820Z",
   "window": "2weeks",
   "games": [
     {
       "name": "Deadlock",
-      "hours": 3.3,
+      "hours": 2.4,
       "image": "https://cdn.cloudflare.steamstatic.com/steam/apps/1422450/capsule_184x69.jpg",
       "url": "https://store.steampowered.com/app/1422450/"
-    },
-    {
-      "name": "Grand Theft Auto IV: The Complete Edition",
-      "hours": 0.8,
-      "image": "https://cdn.cloudflare.steamstatic.com/steam/apps/12210/capsule_184x69.jpg",
-      "url": "https://store.steampowered.com/app/12210/"
-    },
-    {
-      "name": "Ready or Not",
-      "hours": 0.1,
-      "image": "https://cdn.cloudflare.steamstatic.com/steam/apps/1144200/capsule_184x69.jpg",
-      "url": "https://store.steampowered.com/app/1144200/"
-    },
-    {
-      "name": "Arma Reforger",
-      "hours": 0.1,
-      "image": "https://cdn.cloudflare.steamstatic.com/steam/apps/1874880/capsule_184x69.jpg",
-      "url": "https://store.steampowered.com/app/1874880/"
     },
     {
       "name": "Wallpaper Engine",
