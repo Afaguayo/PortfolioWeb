@@ -1,23 +1,23 @@
 {
-  "updated": "2026-10-20T21:35:17.027Z",
+  "updated": "2026-10-21T04:42:28.129Z",
   "tracks": [
-    {
-      "name": "RAGING WOLF",
-      "artists": "Sematary",
-      "album": "RAGING WOLF",
-      "image": "https://i.scdn.co/image/ab67616d000048513eaed361536abe380289199a",
-      "url": "https://open.spotify.com/track/4Ln2vkwyWjnUolcx4OxwcX",
-      "preview": {
-        "source": "deezer",
-        "id": 3946496431
-      }
-    },
     {
       "name": "RAGING WOLF (SLOWED)",
       "artists": "Sematary",
       "album": "RAGING WOLF (SLOWED)",
       "image": "https://i.scdn.co/image/ab67616d000048511a3535de94abd85654b65086",
       "url": "https://open.spotify.com/track/60z1yaIrKRCLxUAeKHIELI",
+      "preview": {
+        "source": "deezer",
+        "id": 3946496431
+      }
+    },
+    {
+      "name": "RAGING WOLF",
+      "artists": "Sematary",
+      "album": "RAGING WOLF",
+      "image": "https://i.scdn.co/image/ab67616d000048513eaed361536abe380289199a",
+      "url": "https://open.spotify.com/track/4Ln2vkwyWjnUolcx4OxwcX",
       "preview": {
         "source": "deezer",
         "id": 3946496431
@@ -46,14 +46,14 @@
       }
     },
     {
-      "name": "in my room x xenocore",
-      "artists": "DEPHCORE",
-      "album": "in my room x xenocore",
-      "image": "https://i.scdn.co/image/ab67616d000048515ffeef8d5c81a7e91682b621",
-      "url": "https://open.spotify.com/track/0tTDmoMzJzVGZjNaqODejo",
+      "name": "Suzuki (from GTAVI: The Album)",
+      "artists": "Fuerza Regida, Grand Theft Auto VI",
+      "album": "Suzuki (from GTAVI: The Album)",
+      "image": "https://i.scdn.co/image/ab67616d0000485180028ec6e7fb8f21fb3ba153",
+      "url": "https://open.spotify.com/track/6VDw2mGBIa4csypjOhS6JT",
       "preview": {
         "source": "deezer",
-        "id": 4265542712
+        "id": 4337604802
       }
     }
   ]
