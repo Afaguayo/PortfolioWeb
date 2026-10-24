@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-23T21:22:11.984Z",
+  "updated": "2026-10-24T04:32:45.560Z",
   "tracks": [
     {
       "name": "RAGING WOLF (SLOWED)",
@@ -24,6 +24,17 @@
       }
     },
     {
+      "name": "Abbi",
+      "artists": "Vincemp3",
+      "album": "Abbi",
+      "image": "https://i.scdn.co/image/ab67616d0000485108bd664a1d2f1433876f5d68",
+      "url": "https://open.spotify.com/track/7iIQkOIwWJoZeTMJgBwuq8",
+      "preview": {
+        "source": "deezer",
+        "id": 3213118351
+      }
+    },
+    {
       "name": "Why Don’t You Say So (feat. Avery Anna)",
       "artists": "Dexter and The Moonrocks, Avery Anna",
       "album": "Friends That I Don't Like",
@@ -35,25 +46,14 @@
       }
     },
     {
-      "name": "RAGING WOLF",
-      "artists": "Sematary",
-      "album": "RAGING WOLF",
-      "image": "https://i.scdn.co/image/ab67616d000048513eaed361536abe380289199a",
-      "url": "https://open.spotify.com/track/4Ln2vkwyWjnUolcx4OxwcX",
+      "name": "BbY WOW",
+      "artists": "KAROL G, Judeline, rusowsky",
+      "album": "NO ME ARREPIENTO DE SENTIR TANTO",
+      "image": "https://i.scdn.co/image/ab67616d0000485121deb742375f88edfb2e7368",
+      "url": "https://open.spotify.com/track/3h5T5JypYU7huFiVYhv1dr",
       "preview": {
         "source": "deezer",
-        "id": 3946496431
-      }
-    },
-    {
-      "name": "Decisions (feat. Miley Cyrus)",
-      "artists": "Borgore, Miley Cyrus",
-      "album": "#NEWGOREORDER",
-      "image": "https://i.scdn.co/image/ab67616d000048517503b913671aade238f4c46e",
-      "url": "https://open.spotify.com/track/517P7amOGuc7fPE9xaSaLY",
-      "preview": {
-        "source": "deezer",
-        "id": 2189118467
+        "id": 4208859922
       }
     }
   ]
