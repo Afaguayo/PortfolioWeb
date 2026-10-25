@@ -1,10 +1,16 @@
 {
-  "updated": "2026-10-24T20:45:35.626Z",
+  "updated": "2026-10-25T04:37:20.351Z",
   "window": "2weeks",
   "games": [
     {
+      "name": "Project Zomboid",
+      "hours": 3.7,
+      "image": "https://cdn.cloudflare.steamstatic.com/steam/apps/108600/capsule_184x69.jpg",
+      "url": "https://store.steampowered.com/app/108600/"
+    },
+    {
       "name": "Cyberpunk 2077",
-      "hours": 1.8,
+      "hours": 2.4,
       "image": "https://cdn.cloudflare.steamstatic.com/steam/apps/1091500/capsule_184x69.jpg",
       "url": "https://store.steampowered.com/app/1091500/"
     },
@@ -13,12 +19,6 @@
       "hours": 1.6,
       "image": "https://cdn.cloudflare.steamstatic.com/steam/apps/1422450/capsule_184x69.jpg",
       "url": "https://store.steampowered.com/app/1422450/"
-    },
-    {
-      "name": "Project Zomboid",
-      "hours": 0.3,
-      "image": "https://cdn.cloudflare.steamstatic.com/steam/apps/108600/capsule_184x69.jpg",
-      "url": "https://store.steampowered.com/app/108600/"
     },
     {
       "name": "Wallpaper Engine",
