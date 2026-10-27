@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-27T12:07:09.000Z",
+  "updated": "2026-10-27T17:58:15.993Z",
   "window": "2weeks",
   "games": [
     {
@@ -19,12 +19,6 @@
       "hours": 1.6,
       "image": "https://cdn.cloudflare.steamstatic.com/steam/apps/1422450/capsule_184x69.jpg",
       "url": "https://store.steampowered.com/app/1422450/"
-    },
-    {
-      "name": "Wallpaper Engine",
-      "hours": 0,
-      "image": "https://cdn.cloudflare.steamstatic.com/steam/apps/431960/capsule_184x69.jpg",
-      "url": "https://store.steampowered.com/app/431960/"
     }
   ]
 }
