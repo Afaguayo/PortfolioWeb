@@ -1,17 +1,6 @@
 {
-  "updated": "2026-10-28T12:49:15.003Z",
+  "updated": "2026-10-28T22:32:27.617Z",
   "tracks": [
-    {
-      "name": "RAGING WOLF (SLOWED)",
-      "artists": "Sematary",
-      "album": "RAGING WOLF (SLOWED)",
-      "image": "https://i.scdn.co/image/ab67616d000048511a3535de94abd85654b65086",
-      "url": "https://open.spotify.com/track/60z1yaIrKRCLxUAeKHIELI",
-      "preview": {
-        "source": "deezer",
-        "id": 3946496431
-      }
-    },
     {
       "name": "Suzuki (from GTAVI: The Album)",
       "artists": "Fuerza Regida, Grand Theft Auto VI",
@@ -21,6 +10,17 @@
       "preview": {
         "source": "deezer",
         "id": 4337604802
+      }
+    },
+    {
+      "name": "RAGING WOLF (SLOWED)",
+      "artists": "Sematary",
+      "album": "RAGING WOLF (SLOWED)",
+      "image": "https://i.scdn.co/image/ab67616d000048511a3535de94abd85654b65086",
+      "url": "https://open.spotify.com/track/60z1yaIrKRCLxUAeKHIELI",
+      "preview": {
+        "source": "deezer",
+        "id": 3946496431
       }
     },
     {
@@ -46,14 +46,14 @@
       }
     },
     {
-      "name": "Why Don’t You Say So (feat. Avery Anna)",
-      "artists": "Dexter and The Moonrocks, Avery Anna",
-      "album": "Friends That I Don't Like",
-      "image": "https://i.scdn.co/image/ab67616d0000485193b6342d3037b1972e457bc4",
-      "url": "https://open.spotify.com/track/0JTvM3WnB7C2X8LxOcnCS5",
+      "name": "in my room x xenocore",
+      "artists": "DEPHCORE",
+      "album": "in my room x xenocore",
+      "image": "https://i.scdn.co/image/ab67616d000048515ffeef8d5c81a7e91682b621",
+      "url": "https://open.spotify.com/track/0tTDmoMzJzVGZjNaqODejo",
       "preview": {
         "source": "deezer",
-        "id": 4305280402
+        "id": 4265542712
       }
     }
   ]
