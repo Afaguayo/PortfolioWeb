@@ -1,7 +1,13 @@
 {
-  "updated": "2026-10-28T22:32:28.650Z",
-  "window": "2weeks",
+  "updated": "2026-10-29T05:44:02.345Z",
+  "window": "month",
   "games": [
+    {
+      "name": "Deadlock",
+      "hours": 4.2,
+      "image": "https://cdn.cloudflare.steamstatic.com/steam/apps/1422450/capsule_184x69.jpg",
+      "url": "https://store.steampowered.com/app/1422450/"
+    },
     {
       "name": "Project Zomboid",
       "hours": 3.7,
@@ -10,15 +16,21 @@
     },
     {
       "name": "Cyberpunk 2077",
-      "hours": 2.4,
+      "hours": 3.4,
       "image": "https://cdn.cloudflare.steamstatic.com/steam/apps/1091500/capsule_184x69.jpg",
       "url": "https://store.steampowered.com/app/1091500/"
     },
     {
-      "name": "Deadlock",
-      "hours": 1.6,
-      "image": "https://cdn.cloudflare.steamstatic.com/steam/apps/1422450/capsule_184x69.jpg",
-      "url": "https://store.steampowered.com/app/1422450/"
+      "name": "Grand Theft Auto IV: The Complete Edition",
+      "hours": 0.8,
+      "image": "https://cdn.cloudflare.steamstatic.com/steam/apps/12210/capsule_184x69.jpg",
+      "url": "https://store.steampowered.com/app/12210/"
+    },
+    {
+      "name": "Ready or Not",
+      "hours": 0.1,
+      "image": "https://cdn.cloudflare.steamstatic.com/steam/apps/1144200/capsule_184x69.jpg",
+      "url": "https://store.steampowered.com/app/1144200/"
     }
   ]
 }
