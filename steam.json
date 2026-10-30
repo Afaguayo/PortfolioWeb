@@ -1,7 +1,13 @@
 {
-  "updated": "2026-10-29T22:43:13.613Z",
+  "updated": "2026-10-30T05:43:20.576Z",
   "window": "month",
   "games": [
+    {
+      "name": "Project Zomboid",
+      "hours": 4.5,
+      "image": "https://cdn.cloudflare.steamstatic.com/steam/apps/108600/capsule_184x69.jpg",
+      "url": "https://store.steampowered.com/app/108600/"
+    },
     {
       "name": "Cyberpunk 2077",
       "hours": 4.3,
@@ -10,15 +16,9 @@
     },
     {
       "name": "Deadlock",
-      "hours": 4.2,
+      "hours": 3.3,
       "image": "https://cdn.cloudflare.steamstatic.com/steam/apps/1422450/capsule_184x69.jpg",
       "url": "https://store.steampowered.com/app/1422450/"
-    },
-    {
-      "name": "Project Zomboid",
-      "hours": 3.7,
-      "image": "https://cdn.cloudflare.steamstatic.com/steam/apps/108600/capsule_184x69.jpg",
-      "url": "https://store.steampowered.com/app/108600/"
     },
     {
       "name": "Grand Theft Auto IV: The Complete Edition",
