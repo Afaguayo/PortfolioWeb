@@ -1,10 +1,10 @@
 {
-  "updated": "2026-10-30T22:16:02.254Z",
+  "updated": "2026-10-31T05:36:48.918Z",
   "window": "month",
   "games": [
     {
       "name": "Project Zomboid",
-      "hours": 9.5,
+      "hours": 10.2,
       "image": "https://cdn.cloudflare.steamstatic.com/steam/apps/108600/capsule_184x69.jpg",
       "url": "https://store.steampowered.com/app/108600/"
     },
@@ -21,16 +21,16 @@
       "url": "https://store.steampowered.com/app/1422450/"
     },
     {
+      "name": "Half Sword",
+      "hours": 1,
+      "image": "https://cdn.cloudflare.steamstatic.com/steam/apps/2397300/capsule_184x69.jpg",
+      "url": "https://store.steampowered.com/app/2397300/"
+    },
+    {
       "name": "Grand Theft Auto IV: The Complete Edition",
       "hours": 0.8,
       "image": "https://cdn.cloudflare.steamstatic.com/steam/apps/12210/capsule_184x69.jpg",
       "url": "https://store.steampowered.com/app/12210/"
-    },
-    {
-      "name": "Ready or Not",
-      "hours": 0.1,
-      "image": "https://cdn.cloudflare.steamstatic.com/steam/apps/1144200/capsule_184x69.jpg",
-      "url": "https://store.steampowered.com/app/1144200/"
     }
   ]
 }
