@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-02T15:44:38.797Z",
+  "updated": "2026-11-03T00:55:54.000Z",
   "window": "month",
   "games": [
     {
@@ -16,7 +16,7 @@
     },
     {
       "name": "Deadlock",
-      "hours": 2.8,
+      "hours": 2.5,
       "image": "https://cdn.cloudflare.steamstatic.com/steam/apps/1422450/capsule_184x69.jpg",
       "url": "https://store.steampowered.com/app/1422450/"
     },
@@ -27,10 +27,10 @@
       "url": "https://store.steampowered.com/app/2397300/"
     },
     {
-      "name": "Grand Theft Auto IV: The Complete Edition",
-      "hours": 0.8,
-      "image": "https://cdn.cloudflare.steamstatic.com/steam/apps/12210/capsule_184x69.jpg",
-      "url": "https://store.steampowered.com/app/12210/"
+      "name": "BeamNG.drive",
+      "hours": 0.3,
+      "image": "https://cdn.cloudflare.steamstatic.com/steam/apps/284160/capsule_184x69.jpg",
+      "url": "https://store.steampowered.com/app/284160/"
     }
   ]
 }
