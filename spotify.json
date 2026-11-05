@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-05T06:40:50.991Z",
+  "updated": "2026-11-05T19:54:42.832Z",
   "tracks": [
     {
       "name": "Suzuki (from GTAVI: The Album)",
@@ -24,17 +24,6 @@
       }
     },
     {
-      "name": "Abbi",
-      "artists": "Vincemp3",
-      "album": "Abbi",
-      "image": "https://i.scdn.co/image/ab67616d0000485108bd664a1d2f1433876f5d68",
-      "url": "https://open.spotify.com/track/7iIQkOIwWJoZeTMJgBwuq8",
-      "preview": {
-        "source": "deezer",
-        "id": 3213118351
-      }
-    },
-    {
       "name": "In Love With Myself (from Cyberpunk: Edgerunners 2)",
       "artists": "Petite Meller, Kalman Chodakiewitz, Eli Shiffman",
       "album": "In Love With Myself (from Cyberpunk: Edgerunners 2)",
@@ -43,6 +32,17 @@
       "preview": {
         "source": "deezer",
         "id": 4350396112
+      }
+    },
+    {
+      "name": "Abbi",
+      "artists": "Vincemp3",
+      "album": "Abbi",
+      "image": "https://i.scdn.co/image/ab67616d0000485108bd664a1d2f1433876f5d68",
+      "url": "https://open.spotify.com/track/7iIQkOIwWJoZeTMJgBwuq8",
+      "preview": {
+        "source": "deezer",
+        "id": 3213118351
       }
     },
     {
