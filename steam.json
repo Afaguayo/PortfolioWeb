@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-07T05:54:36.470Z",
+  "updated": "2026-11-07T12:56:42.431Z",
   "window": "month",
   "games": [
     {
@@ -21,16 +21,16 @@
       "url": "https://store.steampowered.com/app/1422450/"
     },
     {
+      "name": "BeamNG.drive",
+      "hours": 1.1,
+      "image": "https://cdn.cloudflare.steamstatic.com/steam/apps/284160/capsule_184x69.jpg",
+      "url": "https://store.steampowered.com/app/284160/"
+    },
+    {
       "name": "Half Sword",
       "hours": 1,
       "image": "https://cdn.cloudflare.steamstatic.com/steam/apps/2397300/capsule_184x69.jpg",
       "url": "https://store.steampowered.com/app/2397300/"
-    },
-    {
-      "name": "BeamNG.drive",
-      "hours": 0.3,
-      "image": "https://cdn.cloudflare.steamstatic.com/steam/apps/284160/capsule_184x69.jpg",
-      "url": "https://store.steampowered.com/app/284160/"
     }
   ]
 }
