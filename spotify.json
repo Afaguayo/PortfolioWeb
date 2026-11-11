@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-10T19:41:44.592Z",
+  "updated": "2026-11-11T06:10:07.446Z",
   "tracks": [
     {
       "name": "Suzuki (from GTAVI: The Album)",
@@ -10,17 +10,6 @@
       "preview": {
         "source": "deezer",
         "id": 4337604802
-      }
-    },
-    {
-      "name": "BbY WOW",
-      "artists": "KAROL G, Judeline, rusowsky",
-      "album": "NO ME ARREPIENTO DE SENTIR TANTO",
-      "image": "https://i.scdn.co/image/ab67616d0000485121deb742375f88edfb2e7368",
-      "url": "https://open.spotify.com/track/3h5T5JypYU7huFiVYhv1dr",
-      "preview": {
-        "source": "deezer",
-        "id": 4208859922
       }
     },
     {
@@ -35,6 +24,17 @@
       }
     },
     {
+      "name": "BbY WOW",
+      "artists": "KAROL G, Judeline, rusowsky",
+      "album": "NO ME ARREPIENTO DE SENTIR TANTO",
+      "image": "https://i.scdn.co/image/ab67616d0000485121deb742375f88edfb2e7368",
+      "url": "https://open.spotify.com/track/3h5T5JypYU7huFiVYhv1dr",
+      "preview": {
+        "source": "deezer",
+        "id": 4208859922
+      }
+    },
+    {
       "name": "In Love With Myself (from Cyberpunk: Edgerunners 2)",
       "artists": "Petite Meller, Kalman Chodakiewitz, Eli Shiffman",
       "album": "In Love With Myself (from Cyberpunk: Edgerunners 2)",
@@ -46,14 +46,14 @@
       }
     },
     {
-      "name": "Abbi",
-      "artists": "Vincemp3",
-      "album": "Abbi",
-      "image": "https://i.scdn.co/image/ab67616d00004851532954e14a32492b4bdfaf48",
-      "url": "https://open.spotify.com/track/22UUd8vw5Ow7xAl11OX5qd",
+      "name": "Wonka",
+      "artists": "EMIRR, Grupo Marca Registrada",
+      "album": "Wonka",
+      "image": "https://i.scdn.co/image/ab67616d00004851c8b90010f0c9c07758c0f699",
+      "url": "https://open.spotify.com/track/0FmQBKd4WTCbUuiQjYhVhM",
       "preview": {
         "source": "deezer",
-        "id": 3213118351
+        "id": 4383959551
       }
     }
   ]
