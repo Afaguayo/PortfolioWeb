@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-11T14:16:13.995Z",
+  "updated": "2026-11-12T00:39:06.490Z",
   "tracks": [
     {
       "name": "Suzuki (from GTAVI: The Album)",
@@ -35,17 +35,6 @@
       }
     },
     {
-      "name": "In Love With Myself (from Cyberpunk: Edgerunners 2)",
-      "artists": "Petite Meller, Kalman Chodakiewitz, Eli Shiffman",
-      "album": "In Love With Myself (from Cyberpunk: Edgerunners 2)",
-      "image": "https://i.scdn.co/image/ab67616d0000485154684ebe2a0f2bf6b1023c34",
-      "url": "https://open.spotify.com/track/5uKBhXUSYkwdoV4M6vfn8l",
-      "preview": {
-        "source": "deezer",
-        "id": 4350396112
-      }
-    },
-    {
       "name": "Wonka",
       "artists": "EMIRR, Grupo Marca Registrada",
       "album": "Wonka",
@@ -54,6 +43,17 @@
       "preview": {
         "source": "deezer",
         "id": 4383959551
+      }
+    },
+    {
+      "name": "In Love With Myself (from Cyberpunk: Edgerunners 2)",
+      "artists": "Petite Meller, Kalman Chodakiewitz, Eli Shiffman",
+      "album": "In Love With Myself (from Cyberpunk: Edgerunners 2)",
+      "image": "https://i.scdn.co/image/ab67616d0000485154684ebe2a0f2bf6b1023c34",
+      "url": "https://open.spotify.com/track/5uKBhXUSYkwdoV4M6vfn8l",
+      "preview": {
+        "source": "deezer",
+        "id": 4350396112
       }
     }
   ]
