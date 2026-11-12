@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-12T00:39:06.490Z",
+  "updated": "2026-11-12T15:08:35.134Z",
   "tracks": [
     {
       "name": "Suzuki (from GTAVI: The Album)",
@@ -24,17 +24,6 @@
       }
     },
     {
-      "name": "BbY WOW",
-      "artists": "KAROL G, Judeline, rusowsky",
-      "album": "NO ME ARREPIENTO DE SENTIR TANTO",
-      "image": "https://i.scdn.co/image/ab67616d0000485121deb742375f88edfb2e7368",
-      "url": "https://open.spotify.com/track/3h5T5JypYU7huFiVYhv1dr",
-      "preview": {
-        "source": "deezer",
-        "id": 4208859922
-      }
-    },
-    {
       "name": "Wonka",
       "artists": "EMIRR, Grupo Marca Registrada",
       "album": "Wonka",
@@ -43,6 +32,17 @@
       "preview": {
         "source": "deezer",
         "id": 4383959551
+      }
+    },
+    {
+      "name": "BbY WOW",
+      "artists": "KAROL G, Judeline, rusowsky",
+      "album": "NO ME ARREPIENTO DE SENTIR TANTO",
+      "image": "https://i.scdn.co/image/ab67616d0000485121deb742375f88edfb2e7368",
+      "url": "https://open.spotify.com/track/3h5T5JypYU7huFiVYhv1dr",
+      "preview": {
+        "source": "deezer",
+        "id": 4208859922
       }
     },
     {
