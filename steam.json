@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-16T06:22:20.959Z",
+  "updated": "2026-11-16T21:58:33.219Z",
   "window": "month",
   "games": [
     {
@@ -22,7 +22,7 @@
     },
     {
       "name": "Half Sword",
-      "hours": 2.3,
+      "hours": 2.5,
       "image": "https://cdn.cloudflare.steamstatic.com/steam/apps/2397300/capsule_184x69.jpg",
       "url": "https://store.steampowered.com/app/2397300/"
     },
