@@ -1,10 +1,10 @@
 {
-  "updated": "2026-11-16T21:58:33.219Z",
+  "updated": "2026-11-17T07:51:19.123Z",
   "window": "month",
   "games": [
     {
       "name": "Project Zomboid",
-      "hours": 22.7,
+      "hours": 22.4,
       "image": "https://cdn.cloudflare.steamstatic.com/steam/apps/108600/capsule_184x69.jpg",
       "url": "https://store.steampowered.com/app/108600/"
     },
@@ -16,13 +16,13 @@
     },
     {
       "name": "Deadlock",
-      "hours": 3.4,
+      "hours": 4.6,
       "image": "https://cdn.cloudflare.steamstatic.com/steam/apps/1422450/capsule_184x69.jpg",
       "url": "https://store.steampowered.com/app/1422450/"
     },
     {
       "name": "Half Sword",
-      "hours": 2.5,
+      "hours": 2.7,
       "image": "https://cdn.cloudflare.steamstatic.com/steam/apps/2397300/capsule_184x69.jpg",
       "url": "https://store.steampowered.com/app/2397300/"
     },
