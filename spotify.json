@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-17T20:52:27.521Z",
+  "updated": "2026-11-18T07:22:18.890Z",
   "tracks": [
     {
       "name": "BREAK A NECK (w/ Ayesha Erotica)",
@@ -24,17 +24,6 @@
       }
     },
     {
-      "name": "Suzuki (from GTAVI: The Album)",
-      "artists": "Fuerza Regida, Grand Theft Auto VI",
-      "album": "Suzuki (from GTAVI: The Album)",
-      "image": "https://i.scdn.co/image/ab67616d0000485180028ec6e7fb8f21fb3ba153",
-      "url": "https://open.spotify.com/track/6VDw2mGBIa4csypjOhS6JT",
-      "preview": {
-        "source": "deezer",
-        "id": 4337604802
-      }
-    },
-    {
       "name": "In Love With Myself (from Cyberpunk: Edgerunners 2)",
       "artists": "Petite Meller, Kalman Chodakiewitz, Eli Shiffman",
       "album": "In Love With Myself (from Cyberpunk: Edgerunners 2)",
@@ -46,14 +35,25 @@
       }
     },
     {
-      "name": "BbY WOW",
-      "artists": "KAROL G, Judeline, rusowsky",
-      "album": "NO ME ARREPIENTO DE SENTIR TANTO",
-      "image": "https://i.scdn.co/image/ab67616d0000485121deb742375f88edfb2e7368",
-      "url": "https://open.spotify.com/track/3h5T5JypYU7huFiVYhv1dr",
+      "name": "Suzuki (from GTAVI: The Album)",
+      "artists": "Fuerza Regida, Grand Theft Auto VI",
+      "album": "Suzuki (from GTAVI: The Album)",
+      "image": "https://i.scdn.co/image/ab67616d0000485180028ec6e7fb8f21fb3ba153",
+      "url": "https://open.spotify.com/track/6VDw2mGBIa4csypjOhS6JT",
       "preview": {
         "source": "deezer",
-        "id": 4208859922
+        "id": 4337604802
+      }
+    },
+    {
+      "name": "I Don't Like",
+      "artists": "Chief Keef, Lil Reese",
+      "album": "Finally Rich (Deluxe)",
+      "image": "https://i.scdn.co/image/ab67616d00004851029545e1d5351a3b98451577",
+      "url": "https://open.spotify.com/track/4BQBWee4CryVK8YOB4yp0Z",
+      "preview": {
+        "source": "deezer",
+        "id": 62892172
       }
     }
   ]
