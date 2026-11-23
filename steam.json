@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-22T19:33:36.826Z",
+  "updated": "2026-11-23T07:31:27.466Z",
   "window": "month",
   "games": [
     {
@@ -9,16 +9,16 @@
       "url": "https://store.steampowered.com/app/108600/"
     },
     {
-      "name": "Cyberpunk 2077",
-      "hours": 6.1,
-      "image": "https://cdn.cloudflare.steamstatic.com/steam/apps/1091500/capsule_184x69.jpg",
-      "url": "https://store.steampowered.com/app/1091500/"
-    },
-    {
       "name": "Deadlock",
       "hours": 4.6,
       "image": "https://cdn.cloudflare.steamstatic.com/steam/apps/1422450/capsule_184x69.jpg",
       "url": "https://store.steampowered.com/app/1422450/"
+    },
+    {
+      "name": "Cyberpunk 2077",
+      "hours": 4.4,
+      "image": "https://cdn.cloudflare.steamstatic.com/steam/apps/1091500/capsule_184x69.jpg",
+      "url": "https://store.steampowered.com/app/1091500/"
     },
     {
       "name": "Half Sword",
