@@ -1,10 +1,10 @@
 {
-  "updated": "2026-11-23T23:50:17.950Z",
+  "updated": "2026-11-24T09:50:30.173Z",
   "window": "month",
   "games": [
     {
       "name": "Project Zomboid",
-      "hours": 22.4,
+      "hours": 19,
       "image": "https://cdn.cloudflare.steamstatic.com/steam/apps/108600/capsule_184x69.jpg",
       "url": "https://store.steampowered.com/app/108600/"
     },
@@ -16,7 +16,7 @@
     },
     {
       "name": "Cyberpunk 2077",
-      "hours": 4.4,
+      "hours": 3.8,
       "image": "https://cdn.cloudflare.steamstatic.com/steam/apps/1091500/capsule_184x69.jpg",
       "url": "https://store.steampowered.com/app/1091500/"
     },
